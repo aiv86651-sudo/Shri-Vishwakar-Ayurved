@@ -73,8 +73,25 @@ function Nav() {
           <a href="#top" className="logo-original">
             <div className="logo-mark-original">
               <svg viewBox="0 0 24 24" width="36" height="36">
-                <circle cx="12" cy="12" r="11" fill="#fff" stroke="#D4AF37" stroke-width="1"/>
-                <text x="12" y="16.5" text-anchor="middle" font-size="13" fill="#8B0000" font-weight="700">ॐ</text>
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="11"
+                  fill="#fff"
+                  stroke="#D4AF37"
+                  strokeWidth="1"
+                />
+
+                <text
+                  x="12"
+                  y="16.5"
+                  textAnchor="middle"
+                  fontSize="13"
+                  fill="#8B0000"
+                  fontWeight="700"
+                >
+                  ॐ
+                </text>
               </svg>
             </div>
             <div className="logo-text">
@@ -110,7 +127,7 @@ function Nav() {
       {open && (
         <div className="fixed inset-0 z-[200] lg:hidden">
           <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" onClick={() => setOpen(false)} />
-          <motion.div 
+          <motion.div
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             className="absolute top-0 right-0 w-4/5 max-w-sm h-full bg-white shadow-2xl p-8 overflow-y-auto"
@@ -218,7 +235,7 @@ function Trust() {
       <div className="container-x">
         <div className="hero-trust-grid-original">
           {items.map((it, i) => (
-            <motion.div 
+            <motion.div
               key={i}
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -408,50 +425,50 @@ function Treatments() {
 /* ---------------- PANCHAKARMA ---------------- */
 const THERAPIES = [
   {
-    key:'vaman', name:'Vaman', meaning:'Therapeutic Emesis',
-    desc:'A controlled medicated vomiting therapy that clears excess Kapha dosha from the upper respiratory and digestive tract — ideal for conditions like asthma, chronic cold and certain skin disorders.',
-    benefits:['Respiratory Relief','Skin Detox','Kapha Balance','Improved Digestion']
+    key: 'vaman', name: 'Vaman', meaning: 'Therapeutic Emesis',
+    desc: 'A controlled medicated vomiting therapy that clears excess Kapha dosha from the upper respiratory and digestive tract — ideal for conditions like asthma, chronic cold and certain skin disorders.',
+    benefits: ['Respiratory Relief', 'Skin Detox', 'Kapha Balance', 'Improved Digestion']
   },
   {
-    key:'virechan', name:'Virechan', meaning:'Therapeutic Purgation',
-    desc:'A medicated purification therapy that eliminates excess Pitta dosha through the bowels, effectively detoxifying the liver, gallbladder and digestive system.',
-    benefits:['Liver Detox','Pitta Balance','Skin Clarity','Digestive Reset']
+    key: 'virechan', name: 'Virechan', meaning: 'Therapeutic Purgation',
+    desc: 'A medicated purification therapy that eliminates excess Pitta dosha through the bowels, effectively detoxifying the liver, gallbladder and digestive system.',
+    benefits: ['Liver Detox', 'Pitta Balance', 'Skin Clarity', 'Digestive Reset']
   },
   {
-    key:'basti', name:'Basti', meaning:'Medicated Enema',
-    desc:'Herbal oil or decoction-based enemas that target Vata dosha — highly effective for joint disorders, neurological conditions, constipation and lower back pain.',
-    benefits:['Joint & Nerve Care','Vata Balance','Bowel Regularity','Pain Relief']
+    key: 'basti', name: 'Basti', meaning: 'Medicated Enema',
+    desc: 'Herbal oil or decoction-based enemas that target Vata dosha — highly effective for joint disorders, neurological conditions, constipation and lower back pain.',
+    benefits: ['Joint & Nerve Care', 'Vata Balance', 'Bowel Regularity', 'Pain Relief']
   },
   {
-    key:'nasya', name:'Nasya', meaning:'Nasal Therapy',
-    desc:'Administration of medicated oils or powders through the nasal passage to clear the head, sinuses and neurological pathways — beneficial for migraines, sinusitis and mental clarity.',
-    benefits:['Sinus Relief','Migraine Care','Mental Clarity','Improved Sleep']
+    key: 'nasya', name: 'Nasya', meaning: 'Nasal Therapy',
+    desc: 'Administration of medicated oils or powders through the nasal passage to clear the head, sinuses and neurological pathways — beneficial for migraines, sinusitis and mental clarity.',
+    benefits: ['Sinus Relief', 'Migraine Care', 'Mental Clarity', 'Improved Sleep']
   },
   {
-    key:'raktamokshan', name:'Raktamokshan', meaning:'Bloodletting Therapy',
-    desc:'A specialised purification technique that removes impure blood to treat chronic skin disorders, localised inflammation and certain blood-borne conditions, performed under strict medical supervision.',
-    benefits:['Skin Disorders','Detoxification','Reduced Inflammation','Blood Purification']
+    key: 'raktamokshan', name: 'Raktamokshan', meaning: 'Bloodletting Therapy',
+    desc: 'A specialised purification technique that removes impure blood to treat chronic skin disorders, localised inflammation and certain blood-borne conditions, performed under strict medical supervision.',
+    benefits: ['Skin Disorders', 'Detoxification', 'Reduced Inflammation', 'Blood Purification']
   }
 ];
 
-function describeArc(cx: number, cy: number, rOuter: number, rInner: number, startAngle: number, endAngle: number){
-  const polar = (r: number, a: number)=>{
-    const rad = (a-90) * Math.PI/180;
-    return [cx + r*Math.cos(rad), cy + r*Math.sin(rad)];
+function describeArc(cx: number, cy: number, rOuter: number, rInner: number, startAngle: number, endAngle: number) {
+  const polar = (r: number, a: number) => {
+    const rad = (a - 90) * Math.PI / 180;
+    return [cx + r * Math.cos(rad), cy + r * Math.sin(rad)];
   };
-  const [x1,y1] = polar(rOuter, startAngle);
-  const [x2,y2] = polar(rOuter, endAngle);
-  const [x3,y3] = polar(rInner, endAngle);
-  const [x4,y4] = polar(rInner, startAngle);
-  const largeArc = endAngle-startAngle <= 180 ? 0 : 1;
+  const [x1, y1] = polar(rOuter, startAngle);
+  const [x2, y2] = polar(rOuter, endAngle);
+  const [x3, y3] = polar(rInner, endAngle);
+  const [x4, y4] = polar(rInner, startAngle);
+  const largeArc = endAngle - startAngle <= 180 ? 0 : 1;
   return `M ${x1} ${y1} A ${rOuter} ${rOuter} 0 ${largeArc} 1 ${x2} ${y2} L ${x3} ${y3} A ${rInner} ${rInner} 0 ${largeArc} 0 ${x4} ${y4} Z`;
 }
 
 function Panchakarma() {
   const [active, setActive] = useState(0);
   const t = THERAPIES[active];
-  const cx=150, cy=150, rOuter=145, rInner=58;
-  const segAngle = 360/THERAPIES.length;
+  const cx = 150, cy = 150, rOuter = 145, rInner = 58;
+  const segAngle = 360 / THERAPIES.length;
 
   return (
     <section id="panchakarma" className="panchakarma-section-original section-pad">
@@ -470,24 +487,24 @@ function Panchakarma() {
             <div className="pk-wheel-original">
               <svg viewBox="0 0 300 300" className="w-full h-auto">
                 {THERAPIES.map((th, i) => {
-                  const start = i*segAngle;
-                  const end = start+segAngle - 3;
-                  const midAngle = (start+end)/2;
-                  const rLabel = (rOuter+rInner)/2;
-                  const rad = (midAngle-90)*Math.PI/180;
-                  const lx = cx + rLabel*Math.cos(rad);
-                  const ly = cy + rLabel*Math.sin(rad);
+                  const start = i * segAngle;
+                  const end = start + segAngle - 3;
+                  const midAngle = (start + end) / 2;
+                  const rLabel = (rOuter + rInner) / 2;
+                  const rad = (midAngle - 90) * Math.PI / 180;
+                  const lx = cx + rLabel * Math.cos(rad);
+                  const ly = cy + rLabel * Math.sin(rad);
 
                   return (
-                    <g 
-                      key={th.key} 
+                    <g
+                      key={th.key}
                       className={`pk-segment-original ${active === i ? 'active' : ''}`}
                       onClick={() => setActive(i)}
                     >
-                      <path 
-                        d={describeArc(cx,cy,rOuter,rInner,start,end)}
+                      <path
+                        d={describeArc(cx, cy, rOuter, rInner, start, end)}
                         className="seg-path"
-                        fill={i%2===0 ? 'rgba(212,175,55,0.35)' : 'rgba(212,175,55,0.18)'}
+                        fill={i % 2 === 0 ? 'rgba(212,175,55,0.35)' : 'rgba(212,175,55,0.18)'}
                       />
                       <text x={lx} y={ly} textAnchor="middle" dominantBaseline="middle">{th.name}</text>
                     </g>
@@ -501,7 +518,7 @@ function Panchakarma() {
             </div>
           </div>
 
-          <motion.div 
+          <motion.div
             key={active}
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -518,19 +535,19 @@ function Panchakarma() {
 
         <div className="ba-row-original">
           <div className="ba-card-original">
-            <div className="ba-img-original" style={{backgroundImage:"url('https://images.unsplash.com/photo-1611073615922-44a5bd5546e7?q=80&w=500&auto=format&fit=crop')"}}></div>
+            <div className="ba-img-original" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1611073615922-44a5bd5546e7?q=80&w=500&auto=format&fit=crop')" }}></div>
             <div className="ba-cap-original"><b>Before:</b> Chronic Joint Stiffness</div>
           </div>
           <div className="ba-card-original">
-            <div className="ba-img-original" style={{backgroundImage:"url('https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=500&auto=format&fit=crop')"}}></div>
+            <div className="ba-img-original" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=500&auto=format&fit=crop')" }}></div>
             <div className="ba-cap-original"><b>After:</b> Improved Mobility & Relief</div>
           </div>
           <div className="ba-card-original">
-            <div className="ba-img-original" style={{backgroundImage:"url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=500&auto=format&fit=crop')"}}></div>
+            <div className="ba-img-original" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=500&auto=format&fit=crop')" }}></div>
             <div className="ba-cap-original"><b>Before:</b> Skin Flare-Up</div>
           </div>
           <div className="ba-card-original">
-            <div className="ba-img-original" style={{backgroundImage:"url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=500&auto=format&fit=crop')"}}></div>
+            <div className="ba-img-original" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=500&auto=format&fit=crop')" }}></div>
             <div className="ba-cap-original"><b>After:</b> Clear, Restored Skin</div>
           </div>
         </div>
@@ -755,7 +772,7 @@ function Booking() {
             <form onSubmit={handleSubmit}>
               <h3>Book Your Consultation</h3>
               <p className="formsub">Fill the form below — our team will contact you shortly.</p>
-              
+
               <div className="form-group-original">
                 <label htmlFor="fname">Full Name *</label>
                 <input type="text" id="fname" name="name" placeholder="Enter your full name" required />
@@ -764,7 +781,7 @@ function Booking() {
               <div className="form-row-original">
                 <div className="form-group-original">
                   <label htmlFor="fmobile">Mobile Number *</label>
-                  <input type="tel" id="fmobile" name="mobile" placeholder="+91 XXXXX XXXXX" required pattern="[0-9+\s]{10,15}"/>
+                  <input type="tel" id="fmobile" name="mobile" placeholder="+91 XXXXX XXXXX" required pattern="[0-9+\s]{10,15}" />
                 </div>
                 <div className="form-group-original">
                   <label htmlFor="fcity">City *</label>

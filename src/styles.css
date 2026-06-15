@@ -193,7 +193,7 @@ nav.links-original a:hover::after{width:100%;}
 .btn-whatsapp-original{background:var(--herbal); color:#fff; border: none; font-size: 0.76rem !important; padding: 10px 14px !important; min-width: 110px; justify-content: center;}
 
 .hamburger-original{display:none;flex-direction:column;gap:5px;background:none;border:none;}
-hamburger-original span{width:26px;height:2px;background:var(--maroon-deep);display:block;}
+.hamburger-original span{width:26px;height:2px;background:var(--maroon-deep);display:block;}
 
 /* Original Trust Strip Styles */
 .hero-trust-strip-original{
@@ -313,8 +313,237 @@ margin-top: -1px; /* Avoid gap */
   pointer-events: none;
 }
 
-@media(max-width:880px){
-  nav.links-original{display:none;}
-  .nav-cta-original .btn-outline-original{display:none;}
-  .hamburger-original{display:flex;}
+/* ===========================
+   MOBILE RESPONSIVE FIX
+=========================== */
+
+@media (max-width: 880px) {
+
+  /* Hide desktop menu */
+  .links-original{
+    display:none !important;
+  }
+
+  /* Show hamburger */
+  .hamburger-original{
+    display:flex !important;
+    flex-direction:column;
+    gap:5px;
+    background:none;
+    border:none;
+    cursor:pointer;
+  }
+
+  .hamburger-original span{
+    width:26px;
+    height:2px;
+    background:var(--maroon-deep);
+    display:block;
+  }
+
+  /* Hide CTA buttons */
+  .btn-appointment-original,
+  .btn-whatsapp-original{
+    display:none;
+  }
+
+  /* Logo sizing */
+  .logo-original{
+    flex:1;
+    min-width:0;
+    gap:8px;
+  }
+
+  .logo-mark-original{
+    width:42px;
+    height:42px;
+  }
+
+  .logo-sub-en-original,
+  .logo-sub-hi-original{
+    display:none;
+  }
+
+  .devanagari-title-original{
+    font-size:0.95rem;
+    line-height:1.1;
+  }
+
+  .nav-original .container-x{
+    gap:10px;
+    padding-top:10px;
+    padding-bottom:10px;
+  }
+
+  /* Topbar */
+  .topbar .container-x{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:8px;
+  }
+
+  /* Hero Trust Strip */
+  .hero-trust-grid-original{
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+  }
+
+  /* Panchakarma */
+  .pk-layout-original{
+    grid-template-columns:1fr;
+    gap:32px;
+  }
+
+  .pk-wheel-original{
+    width:100%;
+    max-width:320px;
+    margin:auto;
+  }
+
+  .pk-detail-original{
+    padding:22px;
+  }
+
+  /* Appointment */
+  .appt-grid-original{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+
+  .appt-form-original{
+    padding:24px;
+  }
+
+  .form-row-original{
+    grid-template-columns:1fr;
+  }
+}
+
+@media (max-width: 768px){
+
+  /* Hero image fix */
+  #top{
+    min-height:75vh !important;
+    height:auto !important;
+  }
+
+  #top img{
+    object-fit:cover !important;
+    object-position:center center !important;
+  }
+
+  /* Stats section */
+  .hero-trust-grid-original{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .hti-num-original{
+    font-size:1.2rem;
+  }
+
+  .hti-num-text-original{
+    font-size:1rem;
+  }
+
+  .hti-lbl-original{
+    font-size:.72rem;
+  }
+}
+
+@media (max-width: 480px){
+
+  .devanagari-title-original{
+    font-size:0.85rem;
+  }
+
+  .logo-mark-original{
+    width:38px;
+    height:38px;
+  }
+
+  .hero-trust-grid-original{
+    grid-template-columns:1fr;
+  }
+
+  .appt-form-original{
+    padding:18px;
+  }
+}
+
+@media (max-width:768px){
+
+  .hero-content-original{
+    width:100% !important;
+    max-width:100% !important;
+    padding:20px !important;
+  }
+
+  .hero-title-original{
+    font-size:2rem !important;
+    line-height:1.1 !important;
+  }
+
+  .hero-subtitle-original{
+    font-size:0.95rem !important;
+  }
+
+}
+@media (max-width:768px){
+
+  .emergency-card-original{
+    width:220px !important;
+    padding:10px 14px !important;
+  }
+
+  .emergency-card-original h4{
+    font-size:11px !important;
+  }
+
+  .emergency-card-original p{
+    font-size:20px !important;
+  }
+
+}
+
+@media (max-width:768px){
+
+  .hero-buttons-original{
+    display:flex !important;
+    flex-direction:column !important;
+    gap:12px !important;
+    width:100%;
+  }
+
+  .hero-buttons-original button,
+  .hero-buttons-original a{
+    width:100%;
+    justify-content:center;
+  }
+
+}
+
+
+@media (max-width:768px){
+
+  .floating-whatsapp{
+    width:55px !important;
+    height:55px !important;
+    bottom:16px !important;
+    right:16px !important;
+  }
+
+}
+
+
+@media (max-width:768px){
+
+  .logo-mark-original{
+    width:36px;
+    height:36px;
+  }
+
+  .devanagari-title-original{
+    font-size:0.8rem;
+  }
+
 }
