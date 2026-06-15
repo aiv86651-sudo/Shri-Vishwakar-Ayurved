@@ -42,8 +42,8 @@ import doctorMale from "@/assets/doctor-male.jpg";
 import doctorFemale from "@/assets/doctor-female.jpg";
 import herbsImg from "@/assets/herbs.jpg";
 import consultImg from "@/assets/consultation.jpg";
-import heroDesktop from "../assets/new-hero.png";
-import heroMobile from "../assets/hero-mob.png";
+import heroDesktop from "../assets/new-hero.webp";
+import heroMobile from "../assets/hero-mob.webp";
 
 const PHONE = "+91 90227 41538";
 const PHONE_RAW = "919022741538";
