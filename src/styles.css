@@ -547,3 +547,17 @@ margin-top: -1px; /* Avoid gap */
   }
 
 }
+
+@media (max-width:768px){
+  .hero-image{
+    object-fit: cover;
+    object-position: center top;
+  }
+}
+@media (max-width:768px){
+  #top{
+    background-size: contain !important;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}

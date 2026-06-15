@@ -153,65 +153,46 @@ function Hero() {
   return (
     <section
       id="top"
-      className="relative h-screen flex items-end overflow-hidden"
+      className="relative min-h-[65vh] md:min-h-screen flex items-end overflow-hidden"
     >
-      {/* Background Image */}
       <img
         src={heroImg}
         alt="Shri Vishwakar Ayurved Hospital"
         className="absolute inset-0 w-full h-full object-cover object-center"
       />
-
-      {/* Subtle bottom-up overlay for button visibility */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-
-      {/* Content */}
-      <div className="container-x relative z-10 pb-20 md:pb-28">
+      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+      <div className="container-x relative z-10 pb-12 md:pb-28">
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex flex-wrap items-center gap-4"
+          className="flex flex-wrap items-center gap-3"
         >
-          {/* Action Buttons */}
-          <div className="flex flex-wrap gap-3">
-            <Button
-              asChild
-              size="sm"
-              className="bg-[var(--gradient-maroon)] text-white h-11 px-6 text-sm font-medium shadow-2xl hover:opacity-95 transition-all"
-            >
+          <div className="flex flex-wrap gap-3 w-full sm:w-auto">
+            <Button asChild size="sm" className="bg-[var(--gradient-maroon)] text-white h-11 px-5 text-sm font-medium shadow-xl">
               <a href="#book">
                 <Calendar className="mr-2 h-4 w-4 text-secondary" />
-                Book Appointment
+                Book Now
               </a>
             </Button>
-
-            <Button
-              asChild
-              size="sm"
-              variant="outline"
-              className="h-11 px-6 text-sm font-medium bg-white/10 backdrop-blur-md text-white border-white/30 hover:bg-white hover:text-primary transition-all"
-            >
+            <Button asChild size="sm" variant="outline" className="h-11 px-5 text-sm font-medium bg-white/10 backdrop-blur-md text-white border-white/30">
               <a href={WHATSAPP} target="_blank">
                 <MessageCircle className="mr-2 h-4 w-4 text-secondary" />
-                WhatsApp Consultation
+                WhatsApp
               </a>
             </Button>
           </div>
-
-          {/* Emergency Pill */}
           <motion.a
             href={`tel:${PHONE_RAW}`}
-            whileHover={{ y: -2, scale: 1.02 }}
-            className="flex items-center gap-4 bg-white/95 backdrop-blur-md rounded-full pl-2 pr-6 py-2 shadow-2xl border border-white/20 transition-all"
+            whileHover={{ y: -2 }}
+            className="flex items-center gap-3 bg-white/95 backdrop-blur-md rounded-full pl-2 pr-5 py-2 shadow-xl"
           >
-            <div className="h-9 w-9 rounded-full bg-primary/10 flex items-center justify-center relative">
-              <Phone className="h-4 w-4 text-primary" />
-              <span className="absolute inset-0 rounded-full animate-ping bg-primary/20 opacity-40" />
+            <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center relative">
+              <Phone className="h-3.5 w-3.5 text-primary" />
             </div>
             <div className="leading-tight">
-              <div className="text-[10px] text-muted-foreground uppercase font-bold tracking-wider">24/7 Emergency</div>
-              <div className="text-base font-bold text-primary font-display">{PHONE}</div>
+              <div className="text-[9px] text-muted-foreground uppercase font-bold">24/7 Emergency</div>
+              <div className="text-sm font-bold text-primary font-display">{PHONE}</div>
             </div>
           </motion.a>
         </motion.div>
